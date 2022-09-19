@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bdos-san <bdos-san@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 00:34:56 by bdos-san          #+#    #+#             */
-/*   Updated: 2022/09/11 00:49:51 by bdos-san         ###   ########.fr       */
+/*   Created: 2022/09/13 00:10:10 by bdos-san          #+#    #+#             */
+/*   Updated: 2022/09/13 15:08:55 by bdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_print_alphbet.c"
+#include <unistd.h>
 
-void ft_print_alphabet(void);
-
-int main(void)
+void	ft_putchar(char numbers)
 {
-	ft_print_alphabet();
-	return(0);
-
+	write(1, &numbers, 1);
 }
+
+void	ft_print_numbers(void)
+{
+	char	numbers;
+
+	numbers = '0';
+	while (numbers <= '9')
+	{
+		ft_putchar(numbers);
+		numbers++;
+	}
+}
+/*
+int	main(void)
+{
+	ft_print_numbers();
+	ft_putchar('\n');
+}*/
